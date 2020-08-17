@@ -1,0 +1,85 @@
+<div class="item">
+    <div>Avatar URL</div>
+    <div>
+      <input 
+        type="url"
+        name="avatar_url"
+        placeholder="http://"
+        value="{{ teacher.avatar_url }}"
+      >
+    </div>
+  </div>
+
+  <div class="item">
+    <div>Nome completo</div>
+    <div>
+      <input 
+        type="text"
+        name="name"
+        placeholder="Nome do professor"
+        value="{{ teacher.name }}"
+      >
+    </div>
+  </div>
+
+  <div class="item">
+    <div>Data de nascimento</div>
+    <div>
+      <input 
+        type="date"
+        name="birth"
+        value="{{ teacher.birth }}"
+      >
+    </div>
+  </div>
+
+  <div class="item">
+    <div>Gráu de escolaridade</div>
+    <div>
+      <select name="schooling">
+        <option value="High School"{% if teacher.schooling == "High School" %}selected{% endif %}>Médio Completo</option> 
+        <option value="Graduate"{% if teacher.schooling == "Graduate" %}selected{% endif %}>Superior Completo</option>
+        <option value="Master" {% if teacher.schooling == "Master" %}selected{% endif %}>Mestrado</option>
+        <option value="Doctorate"{% if teacher.schooling == "Doctorate" %}selected{% endif %}>Doutorado</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="item">
+    <div>Acompanhamento</div>
+    <div>
+      <span>
+        <input 
+          type="radio" 
+          name="support" 
+          value="Presencial" 
+          {% if teacher.support == "Presencial" %}
+            checked
+          {% endif %}>Presencial
+      </span>
+
+      <span>
+        <input 
+          type="radio" 
+          name="support" 
+          value="Online"
+          {% if teacher.support == "Online" %}
+            checked
+          {% endif %} >Online
+      </span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div>Área de atuação</div>
+    <div>
+      <input 
+        type="text"
+        name="occupation_area"
+        placeholder="Digite matérias de atuação"
+        value="{{ teacher.occupation_area }}"
+      >
+    </div>
+  </div>
+
+  <button type="submit">Salvar</button>

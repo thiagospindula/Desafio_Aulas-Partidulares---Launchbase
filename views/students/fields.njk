@@ -1,0 +1,75 @@
+<div class="item">
+    <div>Avatar URL</div>
+    <div>
+      <input 
+        type="url"
+        name="avatar_url"
+        placeholder="http://"
+        value="{{ student.avatar_url }}"
+      >
+    </div>
+  </div>
+
+  <div class="item">
+    <div>Nome completo</div>
+    <div>
+      <input 
+        type="text"
+        name="name"
+        placeholder="Nome do aluno"
+        value="{{ student.name }}"
+      >
+    </div>
+  </div>
+
+  <div class="item">
+    <div>Email</div>
+    <div>
+      <input 
+        type="email"
+        name="email"
+        value="{{ student.email }}"
+      >
+    </div>
+  </div>
+
+  <div class="item">
+    <div>Data de nascimento</div>
+    <div>
+      <input 
+        type="date"
+        name="birth"
+        value="{{ student.birth }}"
+      >
+    </div>
+  </div>
+  
+  <div class="item">
+    <div>Ano escolar</div>
+    <div>
+      <select name="school_level">
+        <option value="5º ano fundamental"{% if student.school_level == "5º ano fundamental" %}selected{% endif %}>5º ano fundamental</option>
+        <option value="6º ano fundamental"{% if student.school_level == "6º ano fundamental" %}selected{% endif %}>6º ano fundamental</option>
+        <option value="7º ano fundamental"{% if student.school_level == "7º ano fundamental" %}selected{% endif %}>7º ano fundamental</option>
+        <option value="8º ano fundamental"{% if student.school_level == "8º ano fundamental" %}selected{% endif %}>8º ano fundamental</option>
+        <option value="9º ano fundamental"{% if student.school_level == "9º ano fundamental" %}selected{% endif %}>9º ano fundamental</option>
+        <option value="1º ano médio"{% if student.school_level == "1º ano médio" %}selected{% endif %}>1º ano médio</option>
+        <option value="2º ano médio"{% if student.school_level == "2º ano médio" %}selected{% endif %}>2º ano médio</option>
+        <option value="3º ano médio"{% if student.school_level == "3º ano médio" %}selected{% endif %}>3º ano médio</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="item">
+    <div>Carga horária semanal em horas</div>
+    <div>
+      <input 
+        type="number"
+        name="course_load"
+        value="{{ student.course_load }}"
+      >
+    </div>
+  </div>
+
+  <button type="submit">Salvar</button>
+  

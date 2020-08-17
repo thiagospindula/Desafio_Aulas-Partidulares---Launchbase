@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #6e7376;
+  --secondary-color: #4abdac;
+  --blue-style: #99ced4;
+  --pink-style: #eeb6b7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: whitesmoke;
+  
+  
+}
+
+header {
+  background-color: var(--secondary-color);
+  width: 940px;
+  padding: 30px;
+  border-radius: 25px;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+  /*impede que o padding some com witdh*/
+  box-sizing: border-box;
+  box-shadow: 0px 2px 6px -2px var(--blue-style);
+  
+}
+
+.links {
+  font-size: 24px;
+  
+}
+
+.links a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  
+}
+
+.links a.active {
+  font-weight: bold;
+  color: white;
+  font-size: 25px;
+ 
+ 
+}
+
+.links a + a {
+  margin-left: 32px;
+}
+
+.links a::after {
+ 
+  /*pseudo element sempre precisa ter um content*/
+  content: "";
+  width: 0%;
+  height: 6px;
+  border-radius: 10px;
+  background-color: var(--pink-style);
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+}
+
+.links a:hover::after {
+  width: 100%;
+  transition: width 300ms cubic-bezier(0.83,-0.35, 0.27, 1.55);
+}
+
+/*===CARD===*/
+.card {
+  background-color: white;
+  width: 940px;
+  min-height: 400px;
+  margin: 45px auto;
+  border-radius: 15px;
+
+  display: grid;
+  grid-template-columns: 40% 60%;
+
+  box-shadow: 0px 2px 6px -2px var(--blue-style);
+  /*===ANIMATION===*/
+  animation: up 300ms ease;
+}
+@keyframes up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.avatar {
+  border-radius: 15px 0 0 15px;
+}
+
+/*===CARD_CONTENT===*/
+.details {
+  padding: 32px;
+}
+
+.details .item {
+  border-bottom: 1px solid var(--pink-style);
+  padding: 8px 0;
+}
+
+.details .item:last-child {
+  border: none;
+}
+
+.details .item div:nth-child(1) {
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--primary-color);
+  letter-spacing: 0.8px;
+  font-weight: normal;
+}
+
+.details .item div:nth-child(2) {
+  color: #555;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.details h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.details .item span {
+  padding: 8px;
+  background-color: var(--blue-style);
+  border-radius: 16px;
+  color: var(--primary-color);
+  margin-right: 4px;
+  display: inline-block;
+  margin-top: 4px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/*===FORM===*/
+input, select {
+  width: 100%;
+  outline: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+input[type="radio"] {
+  width: initial;
+  margin: 4px;
+}
+
+input ::placeholder {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+button[type="submit"],
+a.button {
+  padding: 8px 32px;
+  background-color: var(--blue-style);
+  border-radius: 4px;
+  margin-top: 32px;
+  text-align: center;
+  width: 100%;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+a.button {
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+}
+
+#form-delete button[type="submit"] {
+  margin-top: 8px;
+  background-color: var(--pink-style);
+  bottom: 140px;
+  left: 200px;
+}
+
+/*===INDEX TEACHERS===*/
+.table-container {
+  display: block;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.table-container table{
+  border-spacing:0 ;
+}
+
+.table-container thead tr th {
+  text-align: left;
+}
+
+td, th {
+  padding: 16px;
+  border-bottom: 1px solid var(--pink-style);
+}
+
+th {
+  text-transform: uppercase;
+  color: var(--primary-color);
+  font-size: 14px;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr td:first-child {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+}
+
+tbody tr td:first-child span {
+  width: 48px;
+  height: 48px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 3px 1px 6px -4px var(--secondary-color);
+  border: 2px solid white;
+}
+
+tbody tr td:last-child a,
+.table-container > a {
+  background-color: var(--blue-style);
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #555;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+.table-container > a {
+  margin-bottom: 16px;
+  display: inline-block;
+  color: #555
+}
+
+.table-container thead tr th:last-child,
+td:last-child {
+  text-align: center;
+}
